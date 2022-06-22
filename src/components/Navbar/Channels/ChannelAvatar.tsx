@@ -2,6 +2,7 @@ import { Tooltip, Avatar, AvatarBadge, Center } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { channel } from '../../../types';
+import { avatarMotion } from '../NavbarAnimations';
 
 interface ChannelAvatarProps {
   channel: channel;
@@ -17,33 +18,6 @@ const drawNotifications = (notifications: number) => {
       </AvatarBadge>
     );
   }
-};
-
-const avatarMotion = {
-  init: {
-    borderRadius: '30px',
-    transition: {
-      duration: 0.3,
-      type: 'tween',
-      ease: 'easeIn',
-    },
-  },
-  hover: {
-    borderRadius: '15px',
-    transition: {
-      duration: 0.3,
-      type: 'tween',
-      ease: 'easeOut',
-    },
-  },
-  selected: {
-    borderRadius: '10px',
-    transition: {
-      duration: 0.3,
-      type: 'tween',
-      ease: 'easeOut',
-    },
-  },
 };
 
 export const ChannelAvatar: React.FC<ChannelAvatarProps> = ({ channel }) => {

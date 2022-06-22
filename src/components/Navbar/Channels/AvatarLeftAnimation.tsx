@@ -1,38 +1,13 @@
 import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
+import { leftMotion, leftMotionHiddenStart } from '../NavbarAnimations';
 
-const leftMotion = {
-  init: {
-    height: '8px',
-    opacity: 0,
-    transition: {
-      duration: 0.3,
-      type: 'tween',
-      ease: 'easeIn',
-    },
-  },
-  hover: {
-    opacity: 1,
-    height: '30px',
-    transition: {
-      duration: 0.3,
-      type: 'tween',
-      ease: 'easeOut',
-    },
-  },
-  selected: {
-    opacity: 1,
-    height: '45px',
-    transition: {
-      duration: 0.3,
-      type: 'tween',
-      ease: 'easeOut',
-    },
-  },
-};
+interface AvatarLeftAnimationProps {
+  hidden?: boolean;
+}
 
-export const AvatarLeftAnimation: React.FC = () => {
+export const AvatarLeftAnimation: React.FC<AvatarLeftAnimationProps> = ({ hidden = true }) => {
   return (
     <Box
       position="absolute"
@@ -53,7 +28,7 @@ export const AvatarLeftAnimation: React.FC = () => {
         ml="-4px"
         bg="white"
         as={motion.div}
-        variants={leftMotion}
+        variants={hidden ? leftMotionHiddenStart : leftMotion}
       ></Box>
     </Box>
   );

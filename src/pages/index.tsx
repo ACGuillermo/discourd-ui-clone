@@ -2,9 +2,9 @@ import { Box, Flex } from '@chakra-ui/react';
 import { Sidebar } from '../components/Navbar/Sidebar';
 
 const channels = [
-  { name: 'test1', unreadMessages: false, notifications: 0, id: 0 },
-  { name: 'hello2', unreadMessages: true, notifications: 2, id: 1 },
-  { name: 'Bye3', unreadMessages: false, notifications: 99, id: 2 },
+  { name: 'test1', unreadMessages: false, notifications: 0, id: 1 },
+  { name: 'hello2', unreadMessages: true, notifications: 2, id: 2 },
+  { name: 'Bye3', unreadMessages: false, notifications: 99, id: 3 },
 ];
 
 const Index = () => {
