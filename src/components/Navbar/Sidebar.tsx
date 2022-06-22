@@ -19,13 +19,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ channels }) => {
     selectedChannel: number | undefined,
     hoveredChannel: number | undefined
   ) => {
-    let a: string;
-    if (!selectedChannel || !hoveredChannel) a = 'init';
-    if (channelId === selectedChannel) a = 'selected';
-    else if (channelId === hoveredChannel) a = 'hover';
-    else a = 'init';
-    console.log(a);
-    return a;
+    let animation: string;
+    if (!selectedChannel || !hoveredChannel) animation = 'init';
+    if (channelId === selectedChannel) animation = 'selected';
+    else if (channelId === hoveredChannel) animation = 'hover';
+    else animation = 'init';
+    return animation;
   };
 
   return (
